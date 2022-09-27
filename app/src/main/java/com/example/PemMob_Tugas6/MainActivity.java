@@ -18,14 +18,23 @@ public class MainActivity extends AppCompatActivity {
 
         if(bill%2==0)
             tvGanjilGenap.setText(bill + " adalah bilangan genap");
+
         else
             tvGanjilGenap.setText(bill + " adalah bilangan ganjil");
 
         String cetak = "";
-        for(int i = 0; i <= bill; i++){
-            if(i%2!=0)
-                cetak = cetak + i + " ";
-        }
-        tvPrintGanjil.setText(cetak);
+        if(bill%2==0)
+            for(int i = 0; i <= bill; i++){
+                if(i%2==0)
+                    cetak = cetak + i + " ";
+                    tvPrintGanjil.setText(cetak);
+            }
+        else
+            for(int i = 0; i <= bill; i++){
+                if(i%2!=0)
+                    cetak = cetak + i + " ";
+                    tvPrintGanjil.setText(cetak);
+            }
+
     }
 }
